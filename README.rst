@@ -45,6 +45,14 @@ Installation
 
     $ pip install --upgrade pocketsphinx
 
+or
+
+.. code-block:: bash
+
+    $ git clone --recursive https://github.com/jessebenson/pocketsphinx-python/
+    $ cd pocketsphinx-python
+    $ python setup.py install
+
 More binary distributions for manual installation are available `here <https://pypi.python.org/pypi/pocketsphinx>`__.
 
 =====
