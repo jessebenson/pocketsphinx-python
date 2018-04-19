@@ -223,3 +223,15 @@ class LiveSpeech(Pocketsphinx):
 
     def stop(self, *args, **kwargs):
         raise StopIteration
+
+
+class AudioDecoder(Pocketsphinx):
+
+    def __init__(self, **kwargs):
+        super(AudioDecoder, self).__init__(**kwargs)
+
+    def decode_stream(self, audio_stream, no_search=False, full_utt=False):
+        with self.start_utterance():
+            buf = audio_stream.read()
+            self.process_raw(buf, no_search, full_utt)
+        return self
